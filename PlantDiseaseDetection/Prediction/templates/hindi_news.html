@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+        .btn{
+            background-color: #348e38;
+            border: 2px  hsl(123, 63%, 16%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Latest Farming News</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% for article in news %}
+                <div class="card mb-3 shadow">
+                    <div class="row g-0 align-items-center">
+                        <!-- Image on the Left -->
+                        <div class="col-md-4">
+                            {% if article.urlToImage %}
+                            <img src="{{ article.urlToImage }}" class="img-fluid rounded-start" alt="News Image">
+                            {% else %}
+                            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="No Image Available">
+                            {% endif %}
+                        </div>
+                        <!-- Text on the Right -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ article.title }}</h5>
+                                <p class="card-text">{{ article.description|default:"No description available." }}</p>
+                                <a href="{{ article.url }}" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+{% endblock %}

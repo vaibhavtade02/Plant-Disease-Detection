@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+        .btn{
+            background-color: #348e38;
+            border: 2px  hsl(123, 63%, 16%);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Farmers Quick Links</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <ul class="list-group">
+
+                    <!-- Government Schemes -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Government Schemes for Farmers</h5>
+                            <p>Official portal for agricultural schemes and subsidies.</p>
+                        </div>
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit PM Kisan</a>
+                    </li>
+
+                    <!-- Weather Forecast -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Weather Forecast for Farmers</h5>
+                            <p>Check real-time weather updates for better farming decisions.</p>
+                        </div>
+                        <a href="https://mausam.imd.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit IMD
+                            Weather</a>
+                    </li>
+
+                    <!-- Soil Health -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Soil Health & Testing</h5>
+                            <p>Get information about soil health cards and testing services.</p>
+                        </div>
+                        <a href="https://soilhealth.dac.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            Soil Health Portal</a>
+                    </li>
+
+                    <!-- Online Crop Market -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Online Market for Crops</h5>
+                            <p>Sell your produce online via e-NAM, India's online agri-market.</p>
+                        </div>
+                        <a href="https://www.enam.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            e-NAM</a>
+                    </li>
+
+                    <!-- Agriculture News -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Agriculture News & Updates</h5>
+                            <p>Stay updated with the latest news related to Indian agriculture.</p>
+                        </div>
+                        <a href="https://agricoop.gov.in/en/news" class="btn btn-primary btn-sm" target="_blank">Visit
+                            Agri News</a>
+                    </li>
+
+                    <!-- Fertilizer Subsidies -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Fertilizer Subsidies & Info</h5>
+                            <p>Find government-approved fertilizers and subsidy details.</p>
+                        </div>
+                        <a href="https://www.urvarak.co.in/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            Fertilizer Portal</a>
+                    </li>
+
+                    <!-- Kisan Call Center -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Kisan Call Center (Toll-Free: 1800-180-1551)</h5>
+                            <p>Call for agricultural advice and support from experts.</p>
+                        </div>
+                        <a href="https://mkisan.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit mKisan</a>
+                    </li>
+
+                    <!-- Crop Insurance -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Pradhan Mantri Fasal Bima Yojana (PMFBY)</h5>
+                            <p>Apply for crop insurance and safeguard your farming investment.</p>
+                        </div>
+                        <a href="https://pmfby.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit PMFBY</a>
+                    </li>
+
+                    <!-- Organic Farming -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Organic Farming & Certification</h5>
+                            <p>Learn about organic farming practices and get certification.</p>
+                        </div>
+                        <a href="https://ncof.dacnet.nic.in/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            NCOF</a>
+                    </li>
+
+                    <!-- State Agricultural Universities -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>State Agricultural Universities</h5>
+                            <p>Explore research, training, and courses for advanced farming.</p>
+                        </div>
+                        <a href="https://icar.org.in/" class="btn btn-primary btn-sm" target="_blank">Visit ICAR</a>
+                    </li>
+
+                    <!-- Livestock Management -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Livestock Management & Dairy</h5>
+                            <p>Get guidance on animal husbandry and dairy farming.</p>
+                        </div>
+                        <a href="https://www.nddb.coop/" class="btn btn-primary btn-sm" target="_blank">Visit NDDB</a>
+                    </li>
+
+                    <!-- Agricultural Loans -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Agricultural Loans & Credit</h5>
+                            <p>Find low-interest farming loans from NABARD.</p>
+                        </div>
+                        <a href="https://www.nabard.org/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            NABARD</a>
+                    </li>
+
+                    <!-- Kisan Rail -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>Kisan Rail Services</h5>
+                            <p>Book railway transport for agricultural produce.</p>
+                        </div>
+                        <a href="https://indianrailways.gov.in/" class="btn btn-primary btn-sm" target="_blank">Visit
+                            Indian Railways</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-4 animated slideInDown">About Us</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">About</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-end">
+            <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                <img class="img-fluid rounded" data-wow-delay="0.1s" src={%  static 'img/about-section.png' %}>
+            </div>
+            <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-1 text-primary mb-0">95%</h1>
+                <p class="text-primary mb-4">Helping Farmers Detect Plant Diseases with Accuracy</p>
+                <h1 class="display-5 mb-4">Empowering Farmers with AI-driven Plant Health Insights</h1>
+                <p class="mb-4">We are training a powerful deep learning model using CNN and YOLO on a dataset of over 700,000 images. Our goal is to build an efficient and reliable plant disease detection system for farmers and researchers.</p>
+                <a class="btn btn-primary py-3 px-4" href="">Try Now</a>
+            </div>
+            <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="row g-5">
+                    <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="border-start ps-4">
+                            <i class="fa fa-award fa-3x text-primary mb-3"></i>
+                            <h4 class="mb-3">Research-Driven Approach</h4>
+                            <span>Leveraging CNN & YOLO for High-Accuracy Detection</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="border-start ps-4">
+                            <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                            <h4 class="mb-3">Sustainable Innovation</h4>
+                            <span>Leveraging technology to create eco-friendly solutions that enhance agricultural productivity while minimizing environmental impact.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- How the Model Works Section -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container wow fadeInUp" data-wow-delay="0.1s">
+        <h2 class="text-center text-primary mb-5">How the Model Works</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 text-center border-0 shadow">
+                    <i class="fa fa-database fa-3x text-primary mb-3"></i>
+                    <h5>Step 1: Data Collection</h5>
+                    <p>Gathering & preprocessing 700,000+ plant images.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 text-center border-0 shadow">
+                    <i class="fa fa-brain fa-3x text-primary mb-3"></i>
+                    <h5>Step 2: Training CNN Model</h5>
+                    <p>Developing deep learning architecture to classify diseases.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card p-4 text-center border-0 shadow">
+                    <i class="fa fa-search fa-3x text-primary mb-3"></i>
+                    <h5>Step 3: YOLO for Detection</h5>
+                    <p>Real-time object detection for precise identification.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Training Insights & Model Accuracy -->
+<div class="container-xxl py-5">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h2 class="text-primary mb-5">Training Insights & Model Accuracy</h2>
+        <p class="lead">Our model has undergone extensive training using advanced techniques.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h3 class="text-primary">700,000+</h3>
+                <p>Images Used for Training</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-primary">YOLO + CNN</h3>
+                <p>Integrated for Disease Detection</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-primary">95% Accuracy</h3>
+                <p>Achieved in Initial Testing</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Real-World Applications -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h2 class="text-primary mb-5">Real-World Applications</h2>
+        <p class="lead">Our model benefits various stakeholders in the agricultural industry.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <i class="fa fa-leaf fa-3x text-primary mb-3"></i>
+                <h5>Farmers</h5>
+                <p>Early disease detection to improve crop health.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-flask fa-3x text-primary mb-3"></i>
+                <h5>Researchers</h5>
+                <p>Large-scale agricultural disease analysis.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-code fa-3x text-primary mb-3"></i>
+                <h5>Developers</h5>
+                <p>Integrate AI models into farming solutions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

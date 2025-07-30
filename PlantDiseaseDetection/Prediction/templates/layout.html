@@ -1,0 +1,303 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Plant Disease Detection</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        /********** Template CSS **********/
+        :root {
+            --primary: #348E38;
+            --secondary: #525368;
+            --light: #E8F5E9;
+            --dark: #0F4229;
+        }
+
+        .back-to-top {
+            position: fixed;
+            display: none;
+            right: 30px;
+            bottom: 30px;
+            z-index: 99;
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        .fw-bold {
+            font-weight: 700 !important;
+        }
+
+        h3,
+        .h3,
+        h4,
+        .h4,
+        .fw-medium {
+            font-weight: 600 !important;
+        }
+
+        h5,
+        .h5,
+        h6,
+        .h6,
+        .fw-semi-bold {
+            font-weight: 500 !important;
+        }
+
+        #nav-btn {
+            background-color: #348e38;
+        }
+
+        /*** Button ***/
+        .btn {
+            transition: .5s;
+            font-weight: 500;
+        }
+
+        .btn-primary,
+        .btn-outline-primary:hover {
+            color: var(--light);
+        }
+
+        .btn-square {
+            width: 38px;
+            height: 38px;
+        }
+
+        .btn-sm-square {
+            width: 32px;
+            height: 32px;
+        }
+
+        .btn-lg-square {
+            width: 48px;
+            height: 48px;
+        }
+
+        .btn-square,
+        .btn-sm-square,
+        .btn-lg-square {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+        }
+
+        /*** Navbar ***/
+        .navbar.sticky-top {
+            top: -100px;
+            transition: .5s;
+        }
+
+        .navbar .navbar-brand,
+        .navbar a.btn {
+            height: 80px
+        }
+
+        .navbar .navbar-nav .nav-link {
+            margin-right: 35px;
+            padding: 25px 0;
+            color: var(--dark);
+            font-size: 18px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .navbar .navbar-nav .nav-link:hover,
+        .navbar .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        .navbar .dropdown-toggle::after {
+            border: none;
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar .navbar-nav .nav-link {
+                margin-right: 0;
+                padding: 10px 0;
+            }
+
+            .navbar .navbar-nav {
+                border-top: 1px solid #EEEEEE;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar .nav-item .dropdown-menu {
+                display: block;
+                border: none;
+                margin-top: 0;
+                top: 150%;
+                opacity: 0;
+                visibility: hidden;
+                transition: .5s;
+            }
+
+            .navbar .nav-item:hover .dropdown-menu {
+                top: 100%;
+                visibility: visible;
+                transition: .5s;
+                opacity: 1;
+            }
+        }
+
+        /* Page header for pages   */
+        .page-header {
+            background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)),
+            url("{% static 'img/carousel-1.jpg'%}") center center no-repeat;
+            background-size: cover;
+        }
+
+        .page-header .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--light);
+        }
+
+        .page-header .breadcrumb-item,
+        .page-header .breadcrumb-item a {
+            font-size: 18px;
+            color: var(--light);
+        }
+
+        /* End Page headers */
+
+        /*** Footer ***/
+        .footer .btn.btn-link {
+            display: block;
+            margin-bottom: 5px;
+            padding: 0;
+            text-align: left;
+            color: var(--light);
+            font-weight: normal;
+            text-transform: capitalize;
+            transition: .3s;
+        }
+
+        .footer .btn.btn-link::before {
+            position: relative;
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        .footer .btn.btn-link:hover {
+            color: var(--primary);
+            letter-spacing: 1px;
+            box-shadow: none;
+        }
+
+        .copyright {
+            color: var(--light);
+            background: #072A19;
+        }
+
+        .copyright a {
+            color: #FFFFFF;
+        }
+
+        .copyright a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="{% url 'predict' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0" style="color: #1f6422;">AgriScan</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{% url 'predict' %}" class="nav-item nav-link active">Home</a>
+
+                
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        News
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'news' %}">English News</a></li>
+                        <li><a class="dropdown-item" href="{% url 'hindi_news'%}">Hindi News</a></li>
+                    </ul>
+                </li>
+                
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+
+                <a href="{% url 'plant_info'%}" class="nav-item nav-link">Plant Info</a>
+                <a href="{% url 'quick_links'%}" class="nav-item nav-link">Quick Links</a>
+
+            </div>
+            <a href="{% url 'contact' %}" id="nav-btn"
+                class="btn text-white py-4 px-lg-4 rounded-0 d-none d-lg-block">Contact Us<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Content Start -->
+    <div class="">
+        {% block content %}
+        <!-- This block will be filled by child templates -->
+        {% endblock %}
+    </div>
+    <!-- Main Content End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">AgriScan</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+
+                    Designed By <a class="border-bottom" href="">Vaibhav</a> <a href=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <!-- <script src="js/main.js"></script> -->
+</body>
+
+</html>
